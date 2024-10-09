@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aguarde..</title>
+</head>
+<body>
+
+    <script>
+        var links = [
+            "https://facebook.com",
+            "https://google.com",
+            "https://instagram.com",
+            "https://uol.com.br"
+        ];
+        
+        // Função que escolhe aleatoriamente um link do array
+        function redirecionarAleatorio() {
+            var indiceAleatorio = Math.floor(Math.random() * links.length); // Escolhe um índice aleatório
+            var linkEscolhido = links[indiceAleatorio]; // Pega o link correspondente
+            window.location.href = linkEscolhido; // Redireciona o usuário para o link escolhido
+        }
+        
+        // Chama a função para fazer o redirecionamento
+        redirecionarAleatorio();
+        
+    </script>
+
+    
+</body>
+</html>
